@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './styles/main.css';
-import { Button, Card, CardActions, CardContent, CardHeader, IconButton, Typography } from '@material-ui/core';
+import { Button, Card, CardActions, CardContent, IconButton, Typography } from '@material-ui/core';
 import TwitterIcon from '../node_modules/@material-ui/icons/Twitter';
 
 import poems from './data/_poems';
@@ -9,13 +9,22 @@ import poems from './data/_poems';
 class App extends React.Component {
   constructor (props) {
     super(props);
-    this.state = poems[0];
+    this.state = poems[this.randomIndex()];
   }
 
-  poemSwitch () {
-    const randomPoem = Math.floor(Math.random()*poems.length); 
+  randomIndex () {
+    return Math.floor(Math.random()*poems.length);
+  }
+
+
+  poemSwitch () { 
+    let randomPoem
+    do {
+      randomPoem = poems[this.randomIndex()];
+    } while (randomPoem.title === this.state.title);
+
     this.setState(state => {
-      return poems[randomPoem]
+      return randomPoem;
     }) 
   }
 
@@ -28,9 +37,9 @@ class App extends React.Component {
                 Random Poems
               </Typography>
               <Typography id="poemtitle">{this.state.title}</Typography>
-              <Typography id="text"><div dangerouslySetInnerHTML={{__html:this.state.text}} /></Typography>
-              <Typography color="text.secondary" id="author"><div dangerouslySetInnerHTML={{__html:this.state.author}} /></Typography>
-              <Typography color="text.secondary" id="source"><div dangerouslySetInnerHTML={{__html:this.state.source}} /></Typography>
+              <Typography id="text"><span dangerouslySetInnerHTML={{__html:this.state.text}} /></Typography>
+              <Typography color="text.secondary" id="author">{this.state.author}</Typography>
+              <Typography color="text.secondary" id="source">{this.state.source}</Typography>
             </CardContent>
             <CardActions>
               <Button onClick={this.poemSwitch.bind(this)} id="new-quote" variant="contained" color="primary">New Poem, plz!</Button>
