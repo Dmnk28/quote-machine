@@ -16,6 +16,12 @@ const poems = [
         text: '3',
         author: '3',
         source: '3'
+    },
+    {
+        title: '3',
+        text: '3',
+        author: '3',
+        source: '3'
     }
 ];
 
