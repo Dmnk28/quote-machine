@@ -1,0 +1,26 @@
+@import 'variables.scss';
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, $background1, $background2);
+}
+
+#quote-box {
+    padding: 0.5rem 1rem;
+    max-width: 80vw;
+}
+
+#text {
+    font-size: x-large;
+}
+
+#author {
+    text-align: right;
+}
+
+#source {
+    @extend #author;
+}
