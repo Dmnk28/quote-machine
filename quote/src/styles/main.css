@@ -17,6 +17,11 @@ body {
   max-width: 80vw;
 }
 
+#poemtitle {
+  font-size: xx-large;
+  margin-top: 1.5rem;
+}
+
 #text {
   font-size: x-large;
 }
