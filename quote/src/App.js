@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './styles/main.css';
-import { Button, Card, CardActions, CardContent, IconButton, Typography } from '@material-ui/core';
+import { Button, Card, CardActions, CardContent, Typography } from '@material-ui/core';
 
 import poems from './data/_poems';
 import TwitterLink from './components/_TwitterLink';
@@ -11,7 +11,7 @@ class App extends React.Component {
     super(props);
     this.state = poems[this.randomIndex()];
   }
-
+  
   randomIndex () {
     return Math.floor(Math.random()*poems.length);
   }
@@ -27,7 +27,7 @@ class App extends React.Component {
       return randomPoem;
     }) 
   }
-
+  
   render() {
     return (
       <main className="App">
@@ -43,7 +43,7 @@ class App extends React.Component {
             </CardContent>
             <CardActions>
               <Button onClick={this.poemSwitch.bind(this)} id="new-quote" variant="contained" color="primary">New Poem, plz!</Button>
-              <IconButton color="primary"><TwitterLink text={this.state.text} author={this.state.author}/></IconButton>
+              <TwitterLink text={this.state.text} author={this.state.author}/>
             </CardActions>
           </Card>
       </main>
