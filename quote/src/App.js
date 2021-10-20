@@ -6,10 +6,14 @@ import { Button, Card, CardActions, CardContent, Typography } from '@material-ui
 import poems from './data/_poems';
 import TwitterLink from './components/_TwitterLink';
 
+
+
 class App extends React.Component {
   constructor (props) {
     super(props);
-    this.state = poems[this.randomIndex()];
+    this.state = {
+      poetry: poems[this.randomIndex()]
+    }
   }
   
   randomIndex () {
@@ -21,11 +25,11 @@ class App extends React.Component {
     let randomPoem
     do {
       randomPoem = poems[this.randomIndex()];
-    } while (randomPoem.title === this.state.title);
+    } while (randomPoem.title === this.state.poetry.title);
 
-    this.setState(state => {
-      return randomPoem;
-    }) 
+    this.setState({
+        poetry: randomPoem
+    }); 
   }
   
   render() {
@@ -34,16 +38,16 @@ class App extends React.Component {
           <Card id="quote-box">
             <CardContent>          
               <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                Random Poems
+                Arabische - Persische - Deutsche Zufallsgedichte
               </Typography>
-              <Typography id="poemtitle">{this.state.title}</Typography>
-              <Typography id="text"><span dangerouslySetInnerHTML={{__html:this.state.text}} /></Typography>
-              <Typography color="text.secondary" id="author">{this.state.author}</Typography>
-              <Typography color="text.secondary" id="source">{this.state.source}</Typography>
+              <Typography id="poemtitle">{this.state.poetry.title}</Typography>
+              <Typography id="text"><span dangerouslySetInnerHTML={{__html:this.state.poetry.text}} /></Typography>
+              <Typography color="text.secondary" id="author">{this.state.poetry.author}</Typography>
+              <Typography color="text.secondary" id="source">{this.state.poetry.source}</Typography>
             </CardContent>
-            <CardActions>
-              <Button onClick={this.poemSwitch.bind(this)} id="new-quote" variant="contained" color="primary">New Poem, plz!</Button>
-              <TwitterLink text={this.state.text} author={this.state.author}/>
+            <CardActions id="card-actions">
+              <TwitterLink text={this.state.poetry.text} author={this.state.poetry.author}/>
+              <Button onClick={this.poemSwitch.bind(this)} id="new-quote" variant="contained" color="primary">Neues Gedicht</Button>
             </CardActions>
           </Card>
       </main>

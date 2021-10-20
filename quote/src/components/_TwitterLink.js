@@ -4,7 +4,8 @@ import TwitterIcon from '@material-ui/icons/Twitter'
 import { IconButton } from '@material-ui/core';
 
 const TwitterLink = (props) => {
-    
+
+
     const deleteReg = /^<p>/g
     const spaceReg = /<p>/g
     const verseReg = /<br\/>/g

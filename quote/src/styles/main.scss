@@ -1,7 +1,7 @@
 @import 'variables.scss';
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,6 +11,7 @@ body {
 #quote-box {
     padding: 0.5rem 1rem;
     max-width: 80vw;
+    margin: 5rem auto;
 }
 
 #poemtitle {
@@ -28,4 +29,9 @@ body {
 
 #source {
     @extend #author;
+}
+
+#card-actions {
+    display: flex;
+    justify-content: space-between;
 }
