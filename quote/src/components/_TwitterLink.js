@@ -21,7 +21,7 @@ const TwitterLink = (props) => {
         window.open(addQuerriesToUrl(htmlFreeTweet, props.author), '_blank');
     };
     return(
-            <a id="tweet-quote" href="twitter.com/intent/tweet" onClick={handleClick}>
+            <a id="tweet-quote" href="twitter.com/intent/tweet" onClick={handleClick}>{/* The a-tag is purely for fullfilling the FreeCodeCamp-Userstory (Quote-Machine)*/} 
                 <IconButton color="primary"><TwitterIcon /></IconButton>
             </a>
         );
