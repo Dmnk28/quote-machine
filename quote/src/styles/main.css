@@ -39,14 +39,17 @@ body {
   text-align: justify;
   text-justify: inter-word;
   text-align-last: justify;
-}
-
-.qasida .ajuz {
   font-size: x-large;
-}
+  /*
+    .ajuz {
+        font-size: x-large;
 
-.qasida .sadr {
-  font-size: x-large;
+    }
+    
+    .sadr {
+        font-size: x-large;
+    }
+*/
 }
 
 #author, #source {
