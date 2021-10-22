@@ -55,7 +55,7 @@ class App extends React.Component {
             </CardContent>
             <CardActions id="card-actions">
               <TwitterLink poetry={this.state.poetry} translated={this.state.translated}/>
-              <TranslateBtn poetry={this.state.poetry} translateClick={this.handleTranslateClick}></TranslateBtn>
+              {(this.state.poetry.textor) ? <TranslateBtn translateClick={this.handleTranslateClick}></TranslateBtn>:''}
               <Button onClick={this.poemSwitch} id="new-quote" variant="contained" color="primary">Neues Gedicht</Button>
             </CardActions>
           </Card>
