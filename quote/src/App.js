@@ -18,7 +18,7 @@ class App extends React.Component {
 
     this.state = {
       poetry: poems[this.randomIndex()],
-      translate: false
+      translated: false,
     }
   }
   
@@ -37,7 +37,7 @@ class App extends React.Component {
   }
 
   handleTranslateClick = () => {      
-    this.setState({translate: !this.state.translate});
+    if (this.state.poetry.textor && this.state.poetry.textde) this.setState({translated: !this.state.translated});
   }
   
   render() {
@@ -49,13 +49,13 @@ class App extends React.Component {
                 Arabische, Persische und Deutsche Zufallsgedichte
               </Typography>
               <Typography id="poemtitle">{this.state.poetry.title}</Typography>
-              <Typography id="text"><span dangerouslySetInnerHTML={(this.state.translate && this.state.poetry.trans) ? {__html:this.state.poetry.trans} :{__html:this.state.poetry.text}} /></Typography>
+              <Typography id="text"><span dangerouslySetInnerHTML={(this.state.translated||!this.state.poetry.textor) ? {__html:this.state.poetry.textde} : {__html:this.state.poetry.textor}} /></Typography>
               <Typography color="text.secondary" id="author">{this.state.poetry.author}</Typography>
               <Typography color="text.secondary" id="source">{this.state.poetry.source}</Typography>
             </CardContent>
             <CardActions id="card-actions">
-              <TwitterLink text={this.state.poetry.text} author={this.state.poetry.author}/>
-              <TranslateBtn translate={this.state.translate} translateClick={this.handleTranslateClick}></TranslateBtn>
+              <TwitterLink poetry={this.state.poetry} translated={this.state.translated}/>
+              <TranslateBtn poetry={this.state.poetry} translateClick={this.handleTranslateClick}></TranslateBtn>
               <Button onClick={this.poemSwitch} id="new-quote" variant="contained" color="primary">Neues Gedicht</Button>
             </CardActions>
           </Card>
