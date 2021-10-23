@@ -54,8 +54,10 @@ class App extends React.Component {
               <Typography color="text.secondary" id="source">{this.state.poetry.source}</Typography>
             </CardContent>
             <CardActions id="card-actions">
-              <TwitterLink poetry={this.state.poetry} translated={this.state.translated}/>
-              {(this.state.poetry.textor) ? <TranslateBtn translateClick={this.handleTranslateClick}></TranslateBtn>:''}
+              <div>
+                {(this.state.poetry.textor) ? <TranslateBtn translateClick={this.handleTranslateClick}></TranslateBtn>:''}
+                <TwitterLink poetry={this.state.poetry} translated={this.state.translated}/>
+              </div>
               <Button onClick={this.poemSwitch} id="new-quote" variant="contained" color="primary">Neues Gedicht</Button>
             </CardActions>
           </Card>
