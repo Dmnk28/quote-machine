@@ -29,7 +29,7 @@ const poems = [
         title:      'rubāʿīy 33',
         textor:     '<div class="qasida"><div class="sadr">ای شرمزده غنچه مـسـتور از تو</div><div class="ajuz">حیران و خجل نرگس مخـمور از تو</div><div class="sadr">گـل با تو برابری کـجا یارد کرد</div><div class="ajuz">کو نور ز مـه دارد و مـه نور از تو</div></div>', 
         textde:     '<p>Du, vor dem die keusche Knospe sich errötend neigt<br/>Und die trunkene Narzisse Scham und Staunen zeig!</p><p>Kann mit dir doch selbst die Rose sich vergleichen nicht,<br/>Denn sie borget von dem Monde, er von dir das Licht.</p>',
-        author:     'Ḫwāǧe Šams ad-Dīn Moḥammad Ḥāfeẓ-e Šīrāzī (Übersetzung Vinzenz Rosenzweig von Schwannau)',
+        author:     'Ḫwāǧe Šams ad-Dīn Moḥammad Ḥāfeẓ-e Šīrāzī',
         death:      '(† ca. 1390 n. Chr. / 792 d. H.)',
         autlink:    'https://en.wikipedia.org/wiki/Hafez',
         source:     'Dīwāne Ḥāfeẓ (Übersetzung Vinzenz Rosenzweig von Schwannau)'
