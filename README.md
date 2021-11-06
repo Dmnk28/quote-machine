@@ -25,4 +25,3 @@ Feel free to tweet your favorite random poem in Arabic/Persian/German.
 ## Project-URL:
 You can find the project in the wild on my [webpage](https://do-webdev.de/), which might be under construction. 
 But the Poems are already reachable: [https://do-webdev.de/projects/poems/](https://do-webdev.de/projects/poems/).
-

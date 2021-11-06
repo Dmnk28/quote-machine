@@ -2,10 +2,13 @@
 
 body {
     min-height: 100vh;
+    background: linear-gradient(45deg, $background1, $background2);
+}
+
+.App {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(45deg, $background1, $background2);
 }
 
 #quote-box {
