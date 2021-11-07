@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Divider, SwipeableDrawer, IconButton, Link, List, ListItem, ListItemIcon, ListItemText, Popover, Typography } from "@mui/material";
-import marked from 'marked';      // Wait untill 4.0.0 ist bugfree!
+import { Divider, IconButton, Link, List, ListItem, ListItemIcon, ListItemText, Popover, Typography } from "@mui/material";
+import { Drawer } from "@mui/material";
+import marked from 'marked';
 import DOMPurify from 'dompurify';
 
 // Material Icons
 import GitHubIcon from "@mui/icons-material/GitHub";
-// import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
 import CloseIcon from '@mui/icons-material/Close';
@@ -56,7 +56,7 @@ const ProjectBar = (props) => {
             <div id="button-div">
                 <IconButton color='primary' onClick={toggleDrawer(true)}><DoubleArrowIcon></DoubleArrowIcon></IconButton>
             </div>
-            <SwipeableDrawer 
+            <Drawer 
                 sx  = {{
                     width: 300,
                     flexShrink: 0,
@@ -179,7 +179,7 @@ const ProjectBar = (props) => {
                     </Link>
 
                 </List>
-            </SwipeableDrawer>
+            </Drawer>
         </React.Fragment>
     );
 
